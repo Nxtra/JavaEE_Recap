@@ -20,6 +20,8 @@ import javax.persistence.PersistenceContext;
 /**
  * DukesBirthdayBean is a stateless session bean that calculates the age
  * difference between a user and Duke, who was born on May 23, 1995.
+ * With stateless session beans, the client makes isolated requests that do 
+ * not depend on any previous state or request
  */
 @Stateless
 public class DukesBirthdayBean {
@@ -27,9 +29,13 @@ public class DukesBirthdayBean {
     private static final Logger logger =
             Logger.getLogger("firstcup.ejb.DukesBirthdayBean");
     @PersistenceContext
+    //An EntityManager instance is associated with a persistence context.
+    //A persistence context is a set of entity instances in which for any 
+    //persistent entity identity there is a unique entity instance
     private EntityManager em;
 
     public Double getAverageAgeDifference() {
+        //getSingleResult = Execute a SELECT query that returns a single untyped result.
         Double avgAgeDiff =
                 (Double) em.createNamedQuery("findAverageAgeDifferenceOfAllFirstcupUsers").getSingleResult();
         logger.log(Level.INFO, "Average age difference is: {0}", avgAgeDiff);

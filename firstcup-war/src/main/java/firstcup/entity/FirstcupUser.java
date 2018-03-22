@@ -19,6 +19,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 
 @Entity
+//Deze kan je dan vanuit EntityManager aanropen met .createNamedQuery("nameOfQuery")
+//Hier in de businesslogic in DukesBirthdayBean
 @NamedQuery(name = "findAverageAgeDifferenceOfAllFirstcupUsers",
 query = "SELECT AVG(u.ageDifference) FROM FirstcupUser u")
 public class FirstcupUser implements Serializable {

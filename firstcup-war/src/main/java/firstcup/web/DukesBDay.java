@@ -21,6 +21,10 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 
+/**
+ * Managed bean that acts as a backing bean
+ * = bean that supports a set of services and which holds temporary data storage
+*/
 @Named
 @SessionScoped
 public class DukesBDay implements Serializable {
@@ -52,7 +56,7 @@ public class DukesBDay implements Serializable {
     
     /**
      * Get the value of age
-     *
+     * Web Client does the REST call
      * @return the value of age
      */
     public int getAge() {

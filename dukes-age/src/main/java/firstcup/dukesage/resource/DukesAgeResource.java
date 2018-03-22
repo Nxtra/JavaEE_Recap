@@ -17,7 +17,7 @@ import javax.ws.rs.Produces;
  * REST Web Service
  *
  */
-@Path("dukesAge")
+@Path("dukesAge") //URL suffix to which the resource will respond
 public class DukesAgeResource {
 
     /** Creates a new instance of DukesAgeResource */
@@ -28,8 +28,8 @@ public class DukesAgeResource {
      * Retrieves representation of an instance of DukesAgeResource
      * @return an instance of java.lang.String
      */
-    @GET
-    @Produces("text/plain")
+    @GET //HTTP get requests
+    @Produces("text/plain") //MIME-type
     public String getText() {
         // Create a new Calendar for Duke's birthday
         Calendar dukesBirthday = new GregorianCalendar(1995, Calendar.MAY, 23);
